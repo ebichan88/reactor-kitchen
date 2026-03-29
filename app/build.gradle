@@ -1,0 +1,29 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation libs.guava
+    implementation platform('io.projectreactor:reactor-bom:2025.0.4')
+    implementation 'io.projectreactor:reactor-core'
+    // Apache Commons Lang (StringUtils)
+    implementation libs.commons.lang3
+}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+application {
+    mainClass = 'reactor.kitchen.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
