@@ -1,0 +1,27 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform('io.projectreactor:reactor-bom:2025.0.4')
+    implementation 'io.projectreactor:reactor-core'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+// Show compiler warnings (for diagnostic purposes)
+tasks.withType(JavaCompile) {
+    options.compilerArgs += ['-Xlint:all']
+}
+
+application {
+    mainClass = 'demo.ThreadDemo'
+}
