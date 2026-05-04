@@ -5,3 +5,4 @@ plugins {
 rootProject.name = 'reactor-kitchen'
 include('app')
 include('thread-demo')
+include('reactor-demo')

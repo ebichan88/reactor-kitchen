@@ -20,7 +20,7 @@ java {
     }
 }
 application {
-    mainClass = 'reactor.kitchen.App'
+    mainClass = 'reactor.demo.App'
 }
 
 tasks.named('test') {
